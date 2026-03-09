@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Agora — Pensez librement</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZmI5MjNjIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZDk3NzA2Ii8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9InNoIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZiIgc3RvcC1vcGFjaXR5PSIwLjI1Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmZmIiBzdG9wLW9wYWNpdHk9IjAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjI0IiBmaWxsPSJ1cmwoI2JnKSIvPjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iNTAiIHJ4PSIyNCIgZmlsbD0idXJsKCNzaCkiLz48cmVjdCB4PSIxOCIgeT0iMzUiIHdpZHRoPSI3IiBoZWlnaHQ9IjM1IiByeD0iMiIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuOTUiLz48cmVjdCB4PSIzMSIgeT0iMzUiIHdpZHRoPSI3IiBoZWlnaHQ9IjM1IiByeD0iMiIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuOTUiLz48cmVjdCB4PSI0NCIgeT0iMzUiIHdpZHRoPSI3IiBoZWlnaHQ9IjM1IiByeD0iMiIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuOTUiLz48cmVjdCB4PSI1NyIgeT0iMzUiIHdpZHRoPSI3IiBoZWlnaHQ9IjM1IiByeD0iMiIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuOTUiLz48cmVjdCB4PSI3MCIgeT0iMzUiIHdpZHRoPSI3IiBoZWlnaHQ9IjM1IiByeD0iMiIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuOTUiLz48cG9seWdvbiBwb2ludHM9IjEyLDM0IDUwLDE2IDg4LDM0IiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC45NSIvPjxyZWN0IHg9IjEyIiB5PSI3MCIgd2lkdGg9Ijc2IiBoZWlnaHQ9IjYiIHJ4PSIyIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC45NSIvPjxyZWN0IHg9IjgiIHk9Ijc2IiB3aWR0aD0iODQiIGhlaWdodD0iNSIgcng9IjIiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjciLz48L3N2Zz4K">
 <meta name="theme-color" content="#f97316">
@@ -327,7 +327,7 @@ body {
   padding: 1.2rem 0.75rem;
   text-align: center;
   gap: 1.2rem;
-  min-height: 300px;
+  min-height: 0;
 }
 
 .welcome-icon {
@@ -356,6 +356,16 @@ body {
   display: flex; flex-direction: column; gap: 0.5rem;
   width: 100%; max-width: 380px;
   margin-top: 0.5rem;
+}
+@media (max-width: 500px) {
+  .suggestions {
+    max-width: 100%;
+    width: calc(100vw - 1.5rem);
+  }
+  .sugg-btn {
+    font-size: 0.78rem;
+    padding: 0.65rem 0.9rem;
+  }
 }
 
 .sugg-btn {
@@ -469,6 +479,7 @@ body {
   background: var(--white);
   border-top: 1px solid var(--border);
   padding: 0.6rem 0.75rem;
+  padding-bottom: max(0.6rem, env(safe-area-inset-bottom));
   flex-shrink: 0;
 }
 
